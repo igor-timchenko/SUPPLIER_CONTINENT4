@@ -106,12 +106,7 @@ class ProductInfoFragment : Fragment() {
 
         binding.productsList.adapter = adapter
 
-        binding.scan.setOnLongClickListener {
-            val data = mock()
-            adapter.setData(data)
 
-            true
-        }
     }
 
     private fun doScan() {
@@ -135,51 +130,4 @@ class ProductInfoFragment : Fragment() {
         }
     }
 
-    private fun mock(): List<Product> {
-        val data = mutableListOf<Product>()
-        for (i in 0 until 10) {
-            val places = mutableListOf<ProductPlace>()
-            for (j in 0 until 100) {
-                val pp =
-                    ProductPlace(
-                        "asd",
-                        1,
-                        1,
-                        LocalDateTime(1, 1, 1, 1, 1, 1, 1),
-                        LocalDateTime(1, 1, 1, 1, 1, 1, 1),
-                        "asd",
-                        false,
-                        1,
-                        1,
-                        "asd",
-                        "asd",
-                        "asd",
-                        false,
-                        false,
-                        false,
-                        "asd",
-                        "asd",
-                        "asd"
-                    )
-                places.add(pp)
-            }
-            val p = Product(
-                "asd",
-                "asd",
-                1,
-                "asd",
-                "asd",
-                "asd",
-                "asd",
-                LocalDateTime(1, 1, 1, 1, 1, 1, 1),
-                "asd",
-                1,
-                places,
-                "asd"
-            )
-            data.add(p)
-        }
-
-        return data
-    }
 }
